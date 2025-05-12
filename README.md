@@ -12,4 +12,11 @@ Tool use (function calling)
 ## Gemini 2.5 Pro
 
 Thinking budget
+
 - While Gemini 2.5 Flash supports thinking budget, it is not currently available for Gemini 2.5 Pro as of May 12, 2025. [source](https://ai.google.dev/gemini-api/docs/thinking)
+
+## Message Roles
+
+- Google models accept "user" or "model" as roles. [source](https://ai.google.dev/gemini-api/docs/text-generation)
+- OpenAI models accept "user", "assistant", and "developer" roles. [source](https://platform.openai.com/docs/guides/text?api-mode=chat)
+- Anthropic models accept "user" and "assistant" roles. [source](https://docs.anthropic.com/en/api/messages)

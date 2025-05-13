@@ -4,6 +4,11 @@ Quirks and interesting bits of various models
 
 ## Claude 3.7 Sonnet
 
+Max tokens for output
+
+- Claude 3.7 Sonnet requires the `max_tokens` parameter to be set in the API request. [source](https://docs.anthropic.com/en/api/messages#body-max-tokens)
+- Models may have different max output token limits, and an `invalid_request_error` error will be returned if the `max_tokens` parameter is higher than the model's max output token limit. So `max_tokens` needs to be set dynamically for each model to get the maximum output token limit for the model.
+
 Tool use (function calling)
 
 - Claude 3.7 Sonnet (and Claude 3.5 Sonnet) do not support calling the same tools multiple times in one response (for example, calling a file-edit tool to edit multiple times to edit multiple files). This is case even with `token-efficient-tools-2025-02-19` header.
@@ -14,6 +19,11 @@ Tool use (function calling)
 Thinking budget
 
 - While Gemini 2.5 Flash supports thinking budget, it is not currently available for Gemini 2.5 Pro as of May 12, 2025. [source](https://ai.google.dev/gemini-api/docs/thinking)
+
+Multi-round tool use
+
+- For multi-round tool use, Gemini 2.5 Pro requires the response from the previous tool call to be included in the messages. [source](https://ai.google.dev/gemini-api/docs/function-calling?example=meeting#step_4_create_user_friendly_response_with_function_result_and_call_the_model_again)
+- Empirically, if the response from the previous tool call is not included, it will be stuck at the first tool call.
 
 ## Message Roles
 

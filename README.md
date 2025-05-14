@@ -1,6 +1,11 @@
 # model-quirks
 
-Quirks and interesting bits of various models
+Quirks, edge cases, and interesting bits of various models.
+
+Related projects:
+
+- [llm-info](https://github.com/paradite/llm-info): Information on LLM models, context window token limit, output token limit, pricing and more.
+- [send-prompt](https://github.com/paradite/send-prompt): A unified TypeScript library for AI model interactions with standardized interfaces and function calling.
 
 ## Claude 3.7 Sonnet
 

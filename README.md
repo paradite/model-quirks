@@ -36,3 +36,13 @@ Multi-round tool use
 - Google models accept "user" or "model" as roles. [source](https://ai.google.dev/gemini-api/docs/text-generation)
 - OpenAI models accept "user", "assistant", and "developer" roles. [source](https://platform.openai.com/docs/guides/text?api-mode=chat)
 - Anthropic models accept "user" and "assistant" roles. [source](https://docs.anthropic.com/en/api/messages)
+
+## Reasoning tags
+
+DeepSeek-R1 and Qwen3 both use `<think>` and `</think>` tags to denote reasoning content. [DeepSeek-R1 source](https://huggingface.co/deepseek-ai/DeepSeek-R1) [Qwen3 source](https://qwenlm.github.io/blog/qwen3/)
+
+Different providers have different ways of providing reasoning content.
+
+- DeepSeek providers reasoning content is in the `reasoning_content` field. [source](https://api-docs.deepseek.com/guides/reasoning_model)
+- OpenRouter providers reasoning content is in the `reasoning` field. [source](https://openrouter.ai/docs/use-cases/reasoning-tokens)
+- Fireworks do not expose separate reasoning field, the reasoning content is within the message content. [source](https://docs.fireworks.ai/api-reference/post-chatcompletions)

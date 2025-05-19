@@ -33,9 +33,10 @@ Multi-round tool use
 
 ## Message Roles
 
-- Google models accept "user" or "model" as roles. [source](https://ai.google.dev/gemini-api/docs/text-generation)
-- OpenAI models accept "user", "assistant", and "developer" roles. [source](https://platform.openai.com/docs/guides/text?api-mode=chat)
-- Anthropic models accept "user" and "assistant" roles. [source](https://docs.anthropic.com/en/api/messages)
+- Google models accept `user` or `model` as roles. [source](https://ai.google.dev/gemini-api/docs/text-generation)
+- OpenAI models accept `user`, `assistant`, `system` and `developer` roles. [source](https://platform.openai.com/docs/guides/text?api-mode=chat)
+  - OpenAI recommends using `developer` role in favor of `system` role for o1 models and newer. [source](https://platform.openai.com/docs/api-reference/chat/create#chat-create-messages)
+- Anthropic models accept `user` and `assistant` roles. [source](https://docs.anthropic.com/en/api/messages)
 
 ## Reasoning tags
 

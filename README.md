@@ -46,3 +46,8 @@ Different providers have different ways of providing reasoning content.
 - DeepSeek providers reasoning content is in the `reasoning_content` field. [source](https://api-docs.deepseek.com/guides/reasoning_model)
 - OpenRouter providers reasoning content is in the `reasoning` field. [source](https://openrouter.ai/docs/use-cases/reasoning-tokens)
 - Fireworks do not expose separate reasoning field, the reasoning content is within the message content. [source](https://docs.fireworks.ai/api-reference/post-chatcompletions)
+
+## Temperature and sampling parameters
+
+- Some OpenAI models (e.g. `o3-mini` and `codex-mini-latest`) do not support temperature (and other sampling parameters like `top_p`, `top_k`, etc.), sending a temperature value will result in an error. [source](https://github.com/openai/openai-python/issues/2072)
+- Vercel AI SDK will always send a temperature value (default to `0` if you don't specify) to the models, even if the model does not support it. [source](https://ai-sdk.dev/docs/ai-sdk-core/settings#temperature) [issue](https://github.com/vercel/ai/issues/5609) [source code](https://github.com/vercel/ai/blob/05c2da505b4564074456ab9c544c9266cdd2244a/packages/ai/core/prompt/prepare-call-settings.ts#L101C35-L101C35)

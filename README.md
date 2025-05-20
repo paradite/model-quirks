@@ -38,7 +38,7 @@ Multi-round tool use
   - OpenAI recommends using `developer` role in favor of `system` role for o1 models and newer. [source](https://platform.openai.com/docs/api-reference/chat/create#chat-create-messages)
 - Anthropic models accept `user` and `assistant` roles. [source](https://docs.anthropic.com/en/api/messages)
 
-## Reasoning tags
+## Reasoning content and tags
 
 DeepSeek-R1 and Qwen3 both use `<think>` and `</think>` tags to denote reasoning content. [DeepSeek-R1 source](https://huggingface.co/deepseek-ai/DeepSeek-R1) [Qwen3 source](https://qwenlm.github.io/blog/qwen3/)
 
@@ -47,6 +47,22 @@ Different providers have different ways of providing reasoning content.
 - DeepSeek providers reasoning content is in the `reasoning_content` field. [source](https://api-docs.deepseek.com/guides/reasoning_model)
 - OpenRouter providers reasoning content is in the `reasoning` field. [source](https://openrouter.ai/docs/use-cases/reasoning-tokens)
 - Fireworks do not expose separate reasoning field, the reasoning content is within the message content. [source](https://docs.fireworks.ai/api-reference/post-chatcompletions)
+
+## Reasoning token count from OpenRouter
+
+To get reasoning token count from OpenRouter, you need to pass `usage: { include: true }` to the API request.
+
+This works in OpenAI TypeScript SDK as long as you use `any` type to avoid type errors. [source](https://openrouter.ai/docs/use-cases/usage-accounting)
+
+```ts
+const openaiResponse = await openai.chat.completions.create({
+  model,
+  messages,
+  usage: {
+    include: true,
+  },
+} as any);
+```
 
 ## Temperature and sampling parameters
 

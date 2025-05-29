@@ -66,5 +66,13 @@ const openaiResponse = await openai.chat.completions.create({
 
 ## Temperature and sampling parameters
 
+Temperature range is different for different models.
+
+- OpenAI models support temperature range of `[0, 2]`. [source](https://platform.openai.com/docs/api-reference/responses/create#responses-create-temperature)
+- Anthropic Claude models support temperature range of `[0, 1]`. [source](https://docs.anthropic.com/en/api/messages#body-temperature)
+- Google Gemini models support temperature range of `[0, 2]`. [source](https://ai.google.dev/api/generate-content#generationconfig)
+
+Temperature and sampling parameters are not supported by all models.
+
 - Some OpenAI models (e.g. `o3-mini` and `codex-mini-latest`) do not support temperature (and other sampling parameters like `top_p`, `top_k`, etc.), sending a temperature value will result in an error. [source](https://github.com/openai/openai-python/issues/2072)
 - Vercel AI SDK will always send a temperature value (default to `0` if you don't specify) to the models, even if the model does not support it. [source](https://ai-sdk.dev/docs/ai-sdk-core/settings#temperature) [issue](https://github.com/vercel/ai/issues/5609) [source code](https://github.com/vercel/ai/blob/05c2da505b4564074456ab9c544c9266cdd2244a/packages/ai/core/prompt/prepare-call-settings.ts#L101C35-L101C35)

@@ -66,7 +66,7 @@ const openaiResponse = await openai.chat.completions.create({
 
 ## Temperature and sampling parameters
 
-Temperature range is different for different models.
+Temperature range supported is different for different providers.
 
 - OpenAI models support temperature range of `[0, 2]`. [source](https://platform.openai.com/docs/api-reference/responses/create#responses-create-temperature)
 - Anthropic Claude models support temperature range of `[0, 1]`. [source](https://docs.anthropic.com/en/api/messages#body-temperature)

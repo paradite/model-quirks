@@ -5,7 +5,7 @@ Quirks, edge cases, and interesting bits of various models.
 Related projects:
 
 - [llm-info](https://github.com/paradite/llm-info): Information on LLM models, context window token limit, output token limit, pricing and more.
-- [send-prompt](https://github.com/paradite/send-prompt): A unified TypeScript library for AI model interactions with standardized interfaces and function calling.
+- [send-prompt](https://github.com/paradite/send-prompt): A TypeScript library for interacting with models across providers with standardized interfaces and tool calling.
 - [ai-file-edit](https://github.com/paradite/ai-file-edit): A library for editing files using AI models.
 - [16x Eval](https://eval.16x.engineer): Your personal workspace for prompt engineering and model evaluation.
 

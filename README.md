@@ -6,7 +6,8 @@ Related projects:
 
 - [llm-info](https://github.com/paradite/llm-info): Information on LLM models, context window token limit, output token limit, pricing and more.
 - [send-prompt](https://github.com/paradite/send-prompt): A unified TypeScript library for AI model interactions with standardized interfaces and function calling.
-- [ai-file-edit](https://github.com/paradite/ai-file-edit): A library for editing files using AI models such as GPT, Claude, and Gemini.
+- [ai-file-edit](https://github.com/paradite/ai-file-edit): A library for editing files using AI models.
+- [16x Eval](https://eval.16x.engineer): Your personal workspace for prompt engineering and model evaluation.
 
 ## Claude 3.7 Sonnet
 
